@@ -213,6 +213,42 @@ header {
 .stat strong {font:700 2rem 'Space Grotesk',sans-serif;color:var(--primary);display:block;line-height:1}
 .stat small {color:var(--muted);font-weight:600;margin-top:5px;display:block}
 
+/* KARTU RINGKASAN AKADEMIK & LOGIKA */
+.academic-summary-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.academic-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  transition: 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+.academic-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.academic-badge {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.academic-card h4 {
+  font: 700 1.1rem 'Space Grotesk', sans-serif;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.academic-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .skill-grid {grid-template-columns:repeat(4,1fr)}
 .skill-card {
   background:var(--surface);border:1px solid var(--line);
@@ -434,7 +470,7 @@ header {
 }
 
 /* ==================================================
-   10. 3D CAROUSEL SLIDER STYLES (Gallery / Certificates)
+   10. 3D CAROUSEL SLIDER STYLES
 ================================================== */
 .carousel-wrapper {
   position: relative;
@@ -785,7 +821,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   .carousel-card-img-wrap { height: 200px; }
   .carousel-card[data-state="prev"] { transform: translateX(-22%) scale(0.82) translateZ(-80px); }
   .carousel-card[data-state="next"] { transform: translateX(22%) scale(0.82) translateZ(-80px); }
-  .doc-grid { grid-template-columns: repeat(2, 1fr); }
+  .doc-grid, .academic-summary-container { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media(max-width:850px) {
@@ -808,7 +844,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
 @media(max-width:600px) {
   .section {padding:60px 0}
   .container {width:92%}
-  .about-grid, .skill-grid, .doc-grid, .social-links { grid-template-columns:1fr; }
+  .about-grid, .skill-grid, .doc-grid, .social-links, .academic-summary-container { grid-template-columns:1fr; }
   .card {padding:20px}
   .contact {padding:35px 18px}
   .carousel-container {height: 380px;}
@@ -822,9 +858,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
 
 <body>
 
-<!-- ==================================================
-   HEADER / NAVBAR SECTION
-================================================== -->
+<!-- NAVBAR -->
 <header>
   <div class="container nav">
     <a href="#home" class="logo">Alnurfa<span>.</span></a>
@@ -841,20 +875,16 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
       <a href="#contact">Contact</a>
     </nav>
     <div style="display:flex;gap:8px">
-      <!-- Tombol Mode Gelap / Terang -->
       <button class="theme-btn" id="themeBtn" aria-label="Ganti tema">
         <span id="themeIcon">☾</span> <span id="themeText" style="font-size:.78rem">Dark</span>
       </button>
-      <!-- Tombol Menu Hamburger untuk Mobile -->
       <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
     </div>
   </div>
 </header>
 
 <main>
-<!-- ==================================================
-   HERO SECTION (Bagian Utama Atas)
-================================================== -->
+<!-- HERO SECTION -->
 <section class="container hero" id="home">
   <div class="reveal">
     <div class="eyebrow">PERSONAL PORTFOLIO</div>
@@ -881,9 +911,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   </div>
 </section>
 
-<!-- ==================================================
-   MARQUEE (Running Text)
-================================================== -->
+<!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
     <span>SOFTWARE DEVELOPMENT ✳</span><span>WEB DEVELOPMENT ✳</span>
@@ -895,14 +923,12 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   </div>
 </div>
 
-<!-- ==================================================
-   ABOUT ME SECTION
-================================================== -->
+<!-- ABOUT ME SECTION -->
 <section class="section container" id="about">
   <div class="section-heading reveal">
     <div class="eyebrow">01 - ABOUT ME</div>
     <h2>Just a Student, Still Becoming.</h2>
-    <p>Perjalanan, ketertarikan, dan pengalaman yang membentuk keahlian saya.</p>
+    <p>Perjalanan, ketertarikan, dan fondasi logika yang membentuk keahlian saya.</p>
   </div>
   <div class="grid about-grid">
     <article class="card reveal">
@@ -920,15 +946,31 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
     <div class="stat-grid reveal">
       <div class="stat"><strong>2024</strong><small>Started at PENS</small></div>
       <div class="stat"><strong>3.60</strong><small>GPA / 4.00</small></div>
-      <div class="stat"><strong>20+</strong><small>Organizational & Committee Experience</small></div>
-      <div class="stat"><strong>4+</strong><small>Featured Projects</small></div>
+      <div class="stat"><strong>20+</strong><small>Organizational Experience</small></div>
+      <div class="stat"><strong>8+</strong><small>Featured Projects</small></div>
+    </div>
+  </div>
+
+  <div class="academic-summary-container reveal">
+    <div class="academic-card">
+      <div class="academic-badge">🧠</div>
+      <h4>Logic & Problem Solving</h4>
+      <p>Terbiasa mengasah kemampuan analisis matematis & pemecahan masalah.</p>
+    </div>
+    <div class="academic-card">
+      <div class="academic-badge">⚡</div>
+      <h4>Hardware & Embedded Systems</h4>
+      <p>Memahami dasar logika digital, arsitektur komputer, pengukuran listrik, mikrokontroler STM32 (ADC/DMA), hingga perancangan sensor & aktuator.</p>
+    </div>
+    <div class="academic-card">
+      <div class="academic-badge">💻</div>
+      <h4>Software & AI Systems</h4>
+      <p>Memahami fondasi pemrograman web/mobile, sistem operasi, manajemen jaringan, logika fuzzy Sugeno, hingga model Machine Learning CNN (TensorFlow).</p>
     </div>
   </div>
 </section>
 
-<!-- ==================================================
-   CV & DOCUMENTS DOWNLOAD HUB
-================================================== -->
+<!-- CV & DOCUMENTS DOWNLOAD HUB -->
 <section class="section container" id="documents">
   <div class="section-heading reveal">
     <div class="eyebrow">02 - CURRICULUM VITAE & PORTOFOLIO</div>
@@ -936,7 +978,6 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
     <p>Lihat dan unduh berkas resmi CV profesional, CV organisasi, maupun Portofolio saya.</p>
   </div>
   <div class="doc-grid">
-    <!-- Kartu CV Professional -->
     <article class="doc-card reveal">
       <div>
         <div class="doc-icon">📄</div>
@@ -949,7 +990,6 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
       </div>
     </article>
 
-    <!-- Kartu CV Organisasi -->
     <article class="doc-card reveal">
       <div>
         <div class="doc-icon">📋</div>
@@ -957,12 +997,11 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
         <p>Curriculum Vitae komprehensif berisi rekam jejak Kepanitiaan, Organisasi & Pelatihan.</p>
       </div>
       <div class="doc-actions">
-        <a class="btn btn-outline btn-sm" href="CV Organisasi (1).pdf" target="_blank">Preview ↗</a>
-        <a class="btn btn-primary btn-sm" href="CV Organisasi (1).pdf" download="CV_ATS_Organisasi_Alifia.pdf">Download 💾</a>
+        <a class="btn btn-outline btn-sm" href="CV ATS Organisasi (1).pdf" target="_blank">Preview ↗</a>
+        <a class="btn btn-primary btn-sm" href="CV ATS Organisasi (1).pdf" download="CV_ATS_Organisasi_Alifia.pdf">Download 💾</a>
       </div>
     </article>
 
-    <!-- Kartu Portofolio -->
     <article class="doc-card reveal">
       <div>
         <div class="doc-icon">📁</div>
@@ -977,9 +1016,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   </div>
 </section>
 
-<!-- ==================================================
-   EDUCATION JOURNEY SECTION
-================================================== -->
+<!-- EDUCATION JOURNEY SECTION -->
 <section class="section container" id="education">
   <div class="section-heading reveal">
     <div class="eyebrow">03 - EDUCATION JOURNEY</div>
@@ -989,9 +1026,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   <div class="timeline" id="educationTimeline"></div>
 </section>
 
-<!-- ==================================================
-   TECHNICAL SKILLS SECTION
-================================================== -->
+<!-- TECHNICAL SKILLS SECTION -->
 <section class="section container" id="skills">
   <div class="section-heading reveal">
     <div class="eyebrow">04 - TECHNICAL SKILLS</div>
@@ -1001,9 +1036,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   <div class="grid skill-grid" id="skillGrid"></div>
 </section>
 
-<!-- ==================================================
-   SELECTED PROJECTS SECTION (Render via JS)
-================================================== -->
+<!-- SELECTED PROJECTS SECTION -->
 <section class="section container" id="projects">
   <div class="section-heading reveal">
     <div class="eyebrow">05 - SELECTED PROJECTS</div>
@@ -1012,9 +1045,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   <div class="project-grid" id="projectGrid"></div>
 </section>
 
-<!-- ==================================================
-   INTERNSHIP EXPERIENCE SECTION
-================================================== -->
+<!-- INTERNSHIP EXPERIENCE SECTION -->
 <section class="section container" id="internship">
   <div class="section-heading reveal">
     <div class="eyebrow">06 - PROFESSIONAL EXPERIENCE</div>
@@ -1024,9 +1055,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   <div class="timeline" id="internshipTimeline"></div>
 </section>
 
-<!-- ==================================================
-   ORGANIZATION & LEADERSHIP SECTION
-================================================== -->
+<!-- ORGANIZATION & LEADERSHIP SECTION -->
 <section class="section container" id="organization">
   <div class="section-heading reveal">
     <div class="eyebrow">07 - ORGANIZATION & COMMITTE EXPERIENCE</div>
@@ -1034,7 +1063,6 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
     <p>Pengalaman kepemimpinan, kepanitiaan, dan pengabdian dalam organisasi kampus.</p>
   </div>
 
-  <!-- Tombol Tab Berjalan / Lewat -->
   <div class="org-tabs-container reveal">
     <button class="org-tab-btn active" onclick="switchOrgTab('current', event)">Sedang Berjalan (Current)</button>
     <button class="org-tab-btn" onclick="switchOrgTab('past', event)">Sudah Lewat (Completed)</button>
@@ -1043,9 +1071,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   <div class="timeline" id="organizationTimeline"></div>
 </section>
 
-<!-- ==================================================
-   ACHIEVEMENTS & MILESTONES SECTION
-================================================== -->
+<!-- ACHIEVEMENTS & MILESTONES SECTION -->
 <section class="section container" id="achievements">
   <div class="section-heading reveal">
     <div class="eyebrow">08 - ACHIEVEMENTS & MILESTONES</div>
@@ -1054,22 +1080,21 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   <div class="grid project-grid" id="achievementGrid"></div>
 </section>
 
-<!-- ==================================================
-   3D CAROUSEL: GALLERY, CERTIFICATES & SEMINARS
-================================================== -->
+<!-- 3D CAROUSEL: GALLERY & CREATIVE WORKS -->
 <section class="section container" id="showcase">
   <div class="section-heading reveal" style="text-align: center;">
-    <div class="eyebrow">09 - PHOTO JOURNAL & CERTIFICATES</div>
+    <div class="eyebrow">09 - PHOTO JOURNAL & CREATIVE WORKS</div>
     <h2>Moments & Memories.</h2>
-    <p style="margin: 8px auto 0;">Pilih kategori di bawah untuk melihat Pelatihan, Sertifikat, Seminar, atau Dokumentasi kegiatan.</p>
+    <p style="margin: 8px auto 0;">Pilih kategori di bawah untuk melihat Karya Kreatif, Pelatihan, Sertifikat, Seminar, atau Dokumentasi kegiatan.</p>
   </div>
 
-  <!-- Filter Kategori Carousel -->
+  <!-- Filter Kategori Carousel (Ditambah Tombol Karya Kreatif) -->
   <div class="filter-tabs reveal" id="filterTabs">
-    <button class="filter-btn active" data-filter="training">🎯 Pelatihan</button>
+    <button class="filter-btn" data-filter="training">🎯 Pelatihan</button>
     <button class="filter-btn" data-filter="certificate">🏅 Sertifikat</button>
     <button class="filter-btn" data-filter="seminar">🎤 Seminar</button>
     <button class="filter-btn" data-filter="activity">📸 Dokumentasi Kegiatan</button>
+    <button class="filter-btn active" data-filter="creative">✨ Karya Pribadi</button>
   </div>
 
   <div class="carousel-wrapper reveal">
@@ -1084,9 +1109,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   </div>
 </section>
 
-<!-- ==================================================
-   CONTACT SECTION
-================================================== -->
+<!-- CONTACT SECTION -->
 <section class="section container" id="contact">
   <div class="contact reveal">
     <div class="eyebrow">10 - GET IN TOUCH</div>
@@ -1126,9 +1149,7 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   </div>
 </footer>
 
-<!-- ==================================================
-   LIGHTBOX MODAL (Untuk Preview Gambar Full-Screen)
-================================================== -->
+<!-- LIGHTBOX MODAL -->
 <div class="modal" id="imageModal">
   <div class="modal-content">
     <button class="modal-close" id="modalClose">✕</button>
@@ -1142,18 +1163,15 @@ footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-
   </div>
 </div>
 
-<!-- ==================================================
-   JAVASCRIPT LOGIC & DATA SOURCES
-================================================== -->
+<!-- JAVASCRIPT LOGIC -->
 <script>
-/* 1. DATA PENDIDIKAN */
 const education = [
   {
     title:"Politeknik Elektronika Negeri Surabaya (PENS)",
     date:"2024 — PRESENT",
     desc:"D4 Teknik Komputer | IPK 3.60 / 4.00",
     points:[
-      "Mempelajari pemrograman, sistem komputer, basis data, dan pengembangan perangkat lunak.",
+      "Mempelajari pemrograman, sistem komputer, basis data, hardware, dan pengembangan perangkat lunak.",
       "Aktif dalam organisasi, kepanitiaan, serta kegiatan kaderisasi & pengembangan mahasiswa."
     ]
   },
@@ -1162,8 +1180,8 @@ const education = [
     date:"2021 — 2024",
     desc:"Jurusan IPA | Kelas Olimpiade TIK",
     points:[
-      "Anggota tim Olimpiade Informatika.",
-      "Finalis Cite Up Universitas Pertamina.",
+      "Anggota tim Olimpiade Informatika & aktif mengikuti kompetisi pemecahan masalah logika.",
+      "Peserta Lomba Logika ITS & Finalis Cite Up Universitas Pertamina."
     ]
   },
   {
@@ -1172,12 +1190,11 @@ const education = [
     desc:"Kelas Unggulan",
     points:[
       "Aktif dalam organisasi Pramuka Inti dan Adiwiyata.",
-      "Aktif dalam ekstrakulikuler Palang Merah Remaja dan Paduan Suara.",
+      "Aktif dalam ekstrakulikuler Palang Merah Remaja dan Paduan Suara."
     ]
   }
 ];
 
-/* 2. DATA KEAHLIAN (TECHNICAL SKILLS) */
 const skills = [
   {title:"Programming",items:["C","C++","Java","Dart","JavaScript","PHP"]},
   {title:"Mobile Development",items:["Flutter","Android Studio","SharedPreferences"]},
@@ -1189,23 +1206,64 @@ const skills = [
   {title:"Soft Skills",items:["Leadership","Teamwork","Communication","Public Speaking","Event Management","Problem Solving"]}
 ];
 
-/* 3. DATA PROJECT (Dilengkapi multi-foto dokumentasi & panah navigasi) */
+/* Data Project Lengkap (Mencakup Seluruh Aset di Folder Project/) */
+/* Data 8 Selected Projects Sesuai Permintaan */
 const projects = [
+  {
+    name: "Android Device Monitoring & Analysis System",
+    type: "Desktop / Landscape Application",
+    images: ["Project/Controling1.jpeg", "Project/Controling2.jpeg"],
+    description: "Aplikasi desktop untuk memantau dan menganalisis kondisi perangkat Android secara umum dan singkat melalui koneksi ADB (suhu, aktivitas aplikasi, penggunaan penyimpanan, dan memori).",
+    contribution: "Perancangan antarmuka landscape serta integrasi konektivitas perangkat Android via USB.",
+    technologies: ["Python", "ADB", "scrcpy", "Linux"]
+  },
+  {
+    name: "GoodHealth Mobile Application",
+    type: "Mobile Application",
+    images: [
+      "Project/GoodHealth1.png", "Project/GoodHealth2.png", "Project/GoodHealth3.png", 
+      "Project/GoodHealth4.png", "Project/GoodHealth5.png", "Project/GoodHealth6.png", 
+      "Project/GoodHealth7.png", "Project/GoodHealth8.png", "Project/GoodHealth9.png", 
+      "Project/GoodHealth10.png", "Project/GoodHealth11.png", "Project/GoodHealth12.png", 
+      "Project/GoodHealth13.png", "Project/GoodHealth14.png", "Project/GoodHealth15.png", 
+      "Project/GoodHealth16.png"
+    ],
+    description: "Aplikasi mobile Flutter sederhana yang dirancang untuk memudahkan konsultasi kesehatan digital serta pemesanan obat secara praktis.",
+    contribution: "Pengembangan antarmuka pengguna (UI/UX) dan alur navigasi pemesanan layanan kesehatan.",
+    technologies: ["Flutter", "Dart", "UI/UX Design"]
+  },
   {
     name: "PENS Attendance Smart System (PASS)",
     type: "Mobile Application",
-    images: ["Project/PASS1.png", "Project/PASS2.png"],
+    images: [
+      "Project/PASS1.jpeg", "Project/PASS2.jpeg", "Project/PASS3.jpeg", "Project/PASS4.jpeg", 
+      "Project/PASS5.jpeg", "Project/PASS6.jpeg", "Project/PASS7.jpeg", "Project/PASS8.jpeg", 
+      "Project/PASS9.jpeg", "Project/PASS10.jpeg", "Project/PASS11.jpeg", "Project/PASS12.jpeg", 
+      "Project/PASS13.jpeg", "Project/PASS14.jpeg", "Project/PASS15.jpeg", "Project/PASS16.jpeg", 
+      "Project/PASS17.jpeg", "Project/PASS18.jpeg", "Project/PASS19.jpeg", "Project/PASS20.jpeg"
+    ],
     description: "Aplikasi presensi mahasiswa berbasis Android dengan fitur presensi online/offline, pengelolaan data, geofencing GPS, dan verifikasi wajah (Face Recognition).",
-    contribution: "Merancang UI/UX pengguna, integrasi basis data Supabase, serta pengembangan logika presensi.",
+    contribution: "Perancangan UI/UX pengguna, integrasi basis data Supabase, serta pengembangan logika presensi.",
     technologies: ["Flutter", "Dart", "Supabase", "GPS Geofencing", "Face Recognition"]
   },
   {
-    name: "Sistem Informasi & Pendaftaran UKM",
-    type: "Web Application",
-    images: ["Project/UKM01.png", "Project/UKM02.png", "Project/UKM03.png", "Project/UKM04.png", "Project/UKM1.png", "Project/UKM2.png", "Project/UKM3.png", "Project/UKM5.png" ],
-    description: "Platform web portal untuk pendaftaran Unit Kegiatan Mahasiswa PENS yang dilengkapi sistem manajemen panel administrator.",
-    contribution: "Pengembangan penuh antarmuka front-end, validasi form, serta integrasi operasi CRUD backend.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"]
+    name: "Simple Power Supply Unit (PSU)",
+    type: "Hardware & Power Electronics",
+    images: ["Project/PSU1.jpeg", "Project/PSU2.jpeg", "Project/PSU3.jpeg"],
+    description: "Perancangan rangkaian catu daya (power supply) sederhana yang menghasilkan dua opsi output tegangan stabil yaitu 9 Volt dan 12 Volt.",
+    contribution: "Perakitan komponen elektronika, pengujian tegangan output, serta analisis kestabilan arus.",
+    technologies: ["Elektronika Analog", "Power Supply", "Transformer", "Regulator Tegangan"]
+  },
+  {
+    name: "Digital Logic Subtractor Circuit",
+    type: "Hardware & Logic Simulation",
+    images: [
+      "Project/Subtractor1.jpeg", "Project/Subtractor2.jpeg", 
+      "Project/Subtractor3.jpeg", "Project/Subtractor4.jpeg"
+    ],
+    description: "Penerapan dan pengujian rangkaian logika digital pengurang biner (subtractor) untuk operasi aritmatika berbasis gerbang logika.",
+    contribution: "Perancangan skematik rangkaian logika, penyusunan tabel kebenaran, dan pengujian fisik.",
+    technologies: ["Digital Logic Gates", "Breadboard Circuit", "Hardware Testing"]
   },
   {
     name: "To-Do List Application",
@@ -1216,16 +1274,18 @@ const projects = [
     technologies: ["Flutter", "Dart", "SharedPreferences"]
   },
   {
-    name: "Android Device Monitoring & Analysis System",
-    type: "Desktop / Landscape Application",
-    images: ["Project/Controling1.jpeg", "Project/Controling2.jpeg"],
-    description: "Aplikasi desktop untuk memantau dan menganalisis kondisi perangkat Android melalui koneksi ADB dengan tampilan landscape, meliputi penggunaan CPU dan memori, aktivitas serta penggunaan sumber daya aplikasi, status jaringan, dan inventarisasi aplikasi yang terpasang.",
-    contribution: "Mengambil dan konektivitas android dengan perangkat USB.",
-    technologies: ["Python", "ADB", "scrcpy", "Linux"]
+    name: "Sistem Informasi & Pendaftaran UKM",
+    type: "Web Application",
+    images: [
+      "Project/UKM01.png", "Project/UKM1.png", "Project/UKM02.png", "Project/UKM2.png", 
+      "Project/UKM03.png", "Project/UKM3.png", "Project/UKM04.png", "Project/UKM5.png"
+    ],
+    description: "Platform web portal untuk pendaftaran Unit Kegiatan Mahasiswa PENS yang dilengkapi sistem manajemen panel administrator.",
+    contribution: "Pengembangan penuh antarmuka front-end, validasi form, serta integrasi operasi CRUD backend.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"]
   }
 ];
 
-/* 4. DATA MAGANG (INTERNSHIP) */
 const internships = [
   {
     title:"PT Efortech Solusi Integrasi",
@@ -1237,7 +1297,6 @@ const internships = [
   }
 ];
 
-/* 5. DATA ORGANISASI (Sedang Berjalan & Sudah Lewat) */
 const organizationsCurrent = [
   {
     title:"Himpunan Mahasiswa of Computer Engineering (HMCE) — Staff Muda Departemen Pengembangan Sumber Daya Mahasiswa (PSDM)",
@@ -1344,7 +1403,6 @@ const organizationsPast = [
   }
 ];
 
-/* 6. DATA PRESTASI */
 const achievements = [
   {title:"Finalis Cite Up",desc:"Kompetisi bidang IT Universitas Pertamina. (MAI)"},
   {title:"Peringkat 10 Besar Try Out Akbar MAI",desc:"Peringkat 10 dari total 1.200+ peserta santri. (MAI)"},
@@ -1352,72 +1410,179 @@ const achievements = [
   {title:"Penggalang Terap dengan 5 TKK Utama",desc:"Pencapaian tertinggi Gerakan Pramuka tingkat SMP. (SMP)"}
 ];
 
-/* 7. DATA SHOWCASE (Pelatihan, Sertifikat, Seminar, Dokumentasi Kegiatan) */
+/* Data Showcase Lengkap (39 Foto) */
 const showcaseItems = [
-  /* Pelatihan (Training) */
+  /* ==================================================
+     1. KARYA KREATIF & LITERASI (Folder: Karya/)
+  ================================================== */
+  { 
+    title: "Karakter Game (Gacha Art)", 
+    category: "creative", 
+    image: "Karya/GachaArt.jpeg", 
+    description: "Sebuah perwujudan eksplorasi imajinasi digital melalui perancangan karakter visual yang memadukan estetika warna, ekspresi emosional, dan harmoni desain." 
+  },
+  { 
+    title: "Desain Karakter 1 (Gacha)", 
+    category: "creative", 
+    image: "Karya/GachaClub1.jpeg", 
+    description: "Rancangan visual karakter bertema anime menggunakan manipulasi gaya visual Gacha Club." 
+  },
+  { 
+    title: "Desain Karakter 2 (Gacha)", 
+    category: "creative", 
+    image: "Karya/GachaClub02.jpeg", 
+    description: "Variasi konsep visual dan penataan busana karakter dalam ekosistem desain digital." 
+  },
+  { 
+    title: "Desain Karakter 3 (Gacha)", 
+    category: "creative", 
+    image: "Karya/Gachalife1.jpeg", 
+    description: "Karya awal eksplorasi perancangan avatar digital bertema Gacha Life." 
+  },
+  { 
+    title: "Story 1", 
+    category: "creative", 
+    image: "Karya/Wattapad.jpeg", 
+    description: "Karya sastra dan penuangan ide kreatif berbentuk narasi cerita fiksi daring yang mengeksplorasi dinamika alur emosi, penokohan mendalam, serta seni bertutur kata." 
+  },
+  { 
+    title: "Story 2", 
+    category: "creative", 
+    image: "Karya/Story.jpeg", 
+    description: "Karya sastra dan penuangan ide kreatif berbentuk narasi cerita fiksi daring yang mengeksplorasi dinamika alur emosi, penokohan mendalam, serta seni bertutur kata." 
+  },
+  { 
+    title: "Art1", 
+    category: "creative", 
+    image: "Karya/Art.jpeg", 
+    description: "Koleksi seni lukis digital yang merefleksikan kebebasan berekspresi, permainan pencahayaan, dan kedalaman rasa dalam bentuk visual." 
+  },
+  { 
+    title: "Art2", 
+    category: "creative", 
+    image: "Karya/Art02.jpeg", 
+    description: "Eksplorasi lanjutan ilustrasi digital dalam mendesain gestur dan ekspresi karakter yang berkarakter." 
+  },
+  { 
+    title: "Koleksi Art", 
+    category: "creative", 
+    image: "Karya/All Art.jpeg", 
+    description: "Komposisi dan galeri kompilasi karya seni ilustrasi digital yang dikembangkan secara mandiri." 
+  },
+  { 
+    title: "Lukisan", 
+    category: "creative", 
+    image: "Karya/Painting1.jpeg", 
+    description: "Eksperimentasi teknik melukis digital dengan tekstur dan kuas sintetis." 
+  },
+  { 
+    title: "Fotografi 1", 
+    category: "creative", 
+    image: "Karya/Pemandangan01.jpeg", 
+    description: "Studi visual suasana alam fajar dengan paduan kontras gradasi langit digital." 
+  },
+  { 
+    title: "Fotografi 2", 
+    category: "creative", 
+    image: "Karya/Pemandangan02.jpeg", 
+    description: "Penggambaran keindahan momen matahari terbenam dalam bentuk seni digital." 
+  },
+  { 
+    title: "Fotografi 3", 
+    category: "creative", 
+    image: "Karya/Pemandangan03.jpeg", 
+    description: "Seni visual bertema suasana malam yang tenang dengan ekspresi cahaya bulan." 
+  },
+  { 
+    title: "Fotografi 4", 
+    category: "creative", 
+    image: "Karya/Pemandangan04.jpeg", 
+    description: "Eksplorasi penggambaran elemen air dan fenomena refleksi alam." 
+  },
+  { 
+    title: "Fotografi 5", 
+    category: "creative", 
+    image: "Karya/Pemandangan05.jpeg", 
+    description: "Karya estetika pemandangan perbukitan dan kedalaman perspektif alami." 
+  },
+  { 
+    title: "Koleksi Fotografgi", 
+    category: "creative", 
+    image: "Karya/All Pemandangan.jpeg", 
+    description: "Kumpulan karya seni digital lanskap alam dan elemen lingkungan dengan nuansa warna yang dramatis." 
+  },
+  { 
+    title: "Konten Creator", 
+    category: "creative", 
+    image: "Karya/Youtube.jpeg", 
+    description: "Dokumentasi proyek kreatif berbasis audio-visual yang dipublikasikan pada platform digital." 
+  },
+
+  /* ==================================================
+     2. PELATIHAN MANAJEMEN (Folder: Sertifikat/)
+  ================================================== */
   { title: "Pelatihan LKMM Pra-TD PENS", category: "training", image: "Sertifikat/2024.1.LKMM Pra-TD-1.jpg", description: "Pelatihan Keterampilan Manajemen Mahasiswa Pra-Tingkat Dasar yang diselenggarakan oleh PENS." },
   { title: "Pelatihan LKMM TD PENS", category: "training", image: "Sertifikat/2025.1.LKMM TD-1.jpg", description: "Pelatihan Keterampilan Manajemen Mahasiswa Tingkat Dasar yang diselenggarakan oleh PENS." },
   { title: "Pelatihan LKMM TM UNESA", category: "training", image: "Sertifikat/2025.6.LKMM TM-1.jpg", description: "Pelatihan Keterampilan Manajemen Mahasiswa Tingkat Menengah yang diselenggarakan oleh UNESA." },
 
-  /* Sertifikat */
-  { title: "Finalis Cite Up Universitas Pertamina", category: "certificate", image: "Sertifikat/2023.1.Finalis-Cite Up.jpg", description: "Sertifikat penghargaan Finalis Lomba IT Cite Up." },
+  /* ==================================================
+     3. SERTIFIKAT PRESTASI & ORGANISASI (Folder: Sertifikat/)
+  ================================================== */
+  { title: "Finalis Cite Up Universitas Pertamina", category: "certificate", image: "Sertifikat/2023.1.Finalis-Cite Up.jpg", description: "Sertifikat penghargaan Finalis Lomba IT Cite Up Universitas Pertamina." },
   { title: "Sertifikat PBC", category: "certificate", image: "Sertifikat/2024.2.PBC as Sekretaris-1.jpg", description: "Sertifikat apresiasi kepanitiaan sebagai Sekretaris PBC." },
-  { title: "Sertifikat CEO HMCE", category: "certificate", image: "Sertifikat/2025.2.CEO-1.jpg", description: "Sertifikat Peserta CEO HMCE." },
-  { title: "Sie Acara GATECOMP 2025", category: "certificate", image: "Sertifikat/2025.3.GATECOMP 2025 as Sie Acara-1.jpg", description: "Sertifikat panitia bidang Sie Acara Gatecom 2025." },
+  { title: "Sertifikat CEO HMCE", category: "certificate", image: "Sertifikat/2025.2.CEO-1.jpg", description: "Sertifikat peserta Computer Engineering Education and Orientation." },
+  { title: "Sie Acara GATECOMP 2025", category: "certificate", image: "Sertifikat/2025.3.GATECOMP 2025 as Sie Acara-1.jpg", description: "Sertifikat panitia bidang Sie Acara GATECOMP 2025." },
   { title: "Sie Korlap Sambut Wisuda", category: "certificate", image: "Sertifikat/2025.4.Sambut Wisuda as Sie Koordinator Lapangan-1.jpg", description: "Sertifikat Koordinator Lapangan acara Sambut Wisuda PENS." },
-  { title: "Sie Acara CE CUP", category: "certificate", image: "Sertifikat/2025.5.CE CUP as Sie Acara-1.jpg", description: "Sertifikat kepanitiaan Sie Acara kompetisi olahraga CE." },
+  { title: "Sie Acara CE CUP", category: "certificate", image: "Sertifikat/2025.5.CE CUP as Sie Acara-1.jpg", description: "Sertifikat kepanitiaan Sie Acara kompetisi olahraga CE CUP." },
   { title: "Tim Persiapan Suksesi (TPS) HMCE", category: "certificate", image: "Sertifikat/2026.1.Suksesi HMCE as TPS-1.jpg", description: "Sertifikat panitia Tim Persiapan Suksesi HMCE PENS." },
   { title: "Steering Committee CEO", category: "certificate", image: "Sertifikat/2026.2.CEO as Steering Comitte-1.jpg", description: "Sertifikat Steering Committee CEO HMCE." },
   { title: "Ketua Pelaksana PSC", category: "certificate", image: "Sertifikat/2026.3.PSC as Ketua Pelaksana-1.jpg", description: "Sertifikat apresiasi kepemimpinan sebagai Ketua Pelaksana PSC." },
-  { title: "Wasit Badminton Dies Natalis", category: "certificate", image: "Sertifikat/2026.4.Wasit Badminton Dies Natalis-1.jpg", description: "Sertifikat Wasit Utama Turnamen Badminton Dies Natalis." },
-  { title: "Koordinator Sie Humas FPC", category: "certificate", image: "Sertifikat/2026.5.FPC 2026 as Koordinator Sie Humas-1.jpg", description: "Sertifikat Koordinator Hubungan Masyarakat FPC." },
+  { title: "Wasit Badminton Dies Natalis", category: "certificate", image: "Sertifikat/2026.4.Wasit Badminton Dies Natalis-1.jpg", description: "Sertifikat Wasit Utama Turnamen Badminton Dies Natalis PENS." },
+  { title: "Koordinator Sie Humas FPC", category: "certificate", image: "Sertifikat/2026.5.FPC 2026 as Koordinator Sie Humas-1.jpg", description: "Sertifikat Koordinator Hubungan Masyarakat Final Project Competition." },
   { title: "Koordinator Sie Humas GOM", category: "certificate", image: "Sertifikat/2026.6.GOM 2026 as Koordinator Sie Humas-1.jpg", description: "Sertifikat Koordinator Sie Humas Grand Opening Mentor." },
 
-  /* Seminar */
+  /* ==================================================
+     4. SEMINAR & WORKSHOP (Folder: Seminar/)
+  ================================================== */
   { title: "Big Fair - Content Creator", category: "seminar", image: "Seminar/2025.Big Fair-Content Creator.png", description: "Partisipasi aktif dalam seminar nasional Content Creator." },
-  { title: "Big Fair - Entrepreneur", category: "seminar", image: "Seminar/2025.Big Fair-Entrepreneur.png", description: "Partisipasi aktif dalam seminar nasional Entrepreneur." },
+  { title: "Big Fair - Entrepreneur", category: "seminar", image: "Seminar/2025.Big Fair-Entrepreneur.png", description: "Partisipasi aktif dalam seminar nasional Entrepreneurship." },
   { title: "Big Fair - Financial Planner", category: "seminar", image: "Seminar/2025.Big Fair-Financial Planer.png", description: "Partisipasi aktif dalam seminar nasional Financial Planning." },
   { title: "Big Fair - International Seminar", category: "seminar", image: "Seminar/2025.Big Fair-Internasional.png", description: "Partisipasi aktif dalam seminar tingkat internasional." },
   { title: "Big Fair - Personal Branding", category: "seminar", image: "Seminar/2025.Big Fair-Personal Branding.png", description: "Partisipasi aktif dalam seminar nasional Personal Branding." },
   { title: "Big Fair - Public Speaking", category: "seminar", image: "Seminar/2025.Big Fair-Public Speaking.png", description: "Partisipasi aktif dalam seminar nasional Public Speaking." },
 
-  /* Dokumentasi Kegiatan */
-  { title: "Turnamen Badminton PENS", category: "activity", image: "Dokumentasi/Badminton.jpeg", description: "Dokumentasi kegiatan turnamen dan kejuaraan badminton mahasiswa." },
-  { title: "Komisi Data Center LKMM", category: "activity", image: "Dokumentasi/Datcen.jpeg", description: "Pengelolaan database dan sistem data center pelatihan kepemimpinan." },
-  { title: "Expo Campus Amanatul Ummah", category: "activity", image: "Dokumentasi/Expo Campus.jpeg", description: "Sosialisasi dan pengenalan kampus PENS kepada santri." },
-  { title: "Final Project Competition (FPC 2)", category: "activity", image: "Dokumentasi/FPC 2.jpeg", description: "Pameran dan penilaian proyek akhir mahasiswa lanjutan." },
-  { title: "Final Project Competition (FPC 1)", category: "activity", image: "Dokumentasi/FPC1.jpeg", description: "Dokumentasi pameran Final Project Competition." },
-  { title: "Grand Opening Mentor (GOM)", category: "activity", image: "Dokumentasi/GOM.jpeg", description: "Pembukaan kegiatan mentoring agama Islam kampus." },
-  { title: "Himpunan Mahasiswa Teknik Komputer (HMCE)", category: "activity", image: "Dokumentasi/HMCE.jpeg", description: "Aktivitas dan kebersamaan pengurus HMCE PENS." },
-  { title: "Komisi Data & Relasi (KOMDARI)", category: "activity", image: "Dokumentasi/KOMDARI.jpeg", description: "Koordinasi kegiatan komisi data dan relasi internal." },
-  { title: "Koordinasi KOMDARI 2", category: "activity", image: "Dokumentasi/KOMDARI2.jpeg", description: "Sesi rapat koordinasi lanjutan KOMDARI." },
-  { title: "Konsultasi & Bimbingan 1", category: "activity", image: "Dokumentasi/Konsul.jpeg", description: "Sesi bimbingan dan konsultasi program kerja." },
-  { title: "Konsultasi & Bimbingan 2", category: "activity", image: "Dokumentasi/Konsul2.jpeg", description: "Diskusi dan arahan bersama tim kepanitiaan." },
-  { title: "Konsultasi & Bimbingan 3", category: "activity", image: "Dokumentasi/Konsul3.jpeg", description: "Evaluasi kegiatan bersama pengurus." },
-  { title: "Koorpem Gelombang 3", category: "activity", image: "Dokumentasi/Koorpem gel 3.jpeg", description: "Koordinasi pemandu LKMM TD Gelombang 3." },
-  { title: "Koorpem LKMM", category: "activity", image: "Dokumentasi/Koorpem lkmm.jpeg", description: "Rapat koordinasi inti para pemandu LKMM." },
-  { title: "Pelatihan LKMM TM", category: "activity", image: "Dokumentasi/LKMM TM.jpeg", description: "Sesi materi Pelatihan Kepemimpinan Mahasiswa Tingkat Menengah." },
-  { title: "Pelatihan LKMM TM 2", category: "activity", image: "Dokumentasi/LKMM TM2.jpeg", description: "Dinamika kelompok peserta LKMM TM." },
-  { title: "LKMM TPD 2026", category: "activity", image: "Dokumentasi/LKMM TPD 2026.jpeg", description: "Pelatihan pemandu dasar tahun 2026." },
-  { title: "MBEX PENS", category: "activity", image: "Dokumentasi/MBEX.jpeg", description: "Kegiatan kebersamaan dan event mahasiswa." },
-  { title: "Mentoring Agama Islam", category: "activity", image: "Dokumentasi/Mentoring.jpeg", description: "Pendampingan kelompok mentoring keislaman mahasiswa." },
-  { title: "Panitia Gatecom PENS", category: "activity", image: "Dokumentasi/Panit Gatecom.jpeg", description: "Kepanitiaan event perlombaan teknologi & komputer Gatecom." },
-  { title: "PBC 2024", category: "activity", image: "Dokumentasi/PBC2024.jpeg", description: "Penyelenggaraan acara PENS Badminton Club." },
-  { title: "PDD LKMM", category: "activity", image: "Dokumentasi/PDD LKMM.jpeg", description: "Tim Publikasi, Dekorasi, dan Dokumentasi LKMM PENS." },
-  { title: "Pemandu LKMM", category: "activity", image: "Dokumentasi/Pemandu.jpeg", description: "Fasilitator dan pemandu materi pelatihan kepemimpinan." },
-  { title: "Pemandu LKMM (Sesi 2)", category: "activity", image: "Dokumentasi/Pemandu2.jpeg", description: "Pendampingan kelompok peserta LKMM." },
-  { title: "Pemandu LKMM (Sesi 3)", category: "activity", image: "Dokumentasi/Pemandu3.jpeg", description: "Sesi simulasi dan pengarahan lapangan." },
-  { title: "PSDM HMCE", category: "activity", image: "Dokumentasi/PSDM.jpeg", description: "Program kerja departemen Pengembangan Sumber Daya Manusia." },
-  { title: "Sambut Wisuda PENS", category: "activity", image: "Dokumentasi/SambutWisuda.jpeg", description: "Kepanitiaan penyambutan wisudawan." },
-  { title: "Steering Committee (SC 2)", category: "activity", image: "Dokumentasi/SC.2.jpeg", description: "Rapat pengarahan steering committee acara." },
-  { title: "Steering Committee (SC)", category: "activity", image: "Dokumentasi/SC.jpeg", description: "Pengawasan jalannya rangkaian kegiatan organisasi." },
-  { title: "Studi Banding HMCE x HIMTI", category: "activity", image: "Dokumentasi/Stuban HMCE X HIMTI.jpeg", description: "Kolaborasi dan kunjungan antar himpunan mahasiswa." },
-  { title: "Suksesi HMCE", category: "activity", image: "Dokumentasi/Suksesi.jpeg", description: "Sidang musyawarah suksesi kepengurusan himpunan." },
-  { title: "Wasit Pertandingan", category: "activity", image: "Dokumentasi/Wasit.jpeg", description: "Bertugas sebagai wasit utama turnamen olahraga kampus." },
-  { title: "Welpart UKM", category: "activity", image: "Dokumentasi/Welpart UKM.jpeg", description: "Welcoming party dan pameran Unit Kegiatan Mahasiswa." }
+  /* ==================================================
+     5. DOKUMENTASI KEGIATAN & ORGANISASI (Folder: Dokumentasi/)
+  ================================================== */
+  { title: "Rapat Pengurus Badminton", category: "activity", image: "Dokumentasi/After Rapat Pengurus Badminton as Sekretaris.jpeg", description: "Dokumentasi evaluasi dan koordinasi bersama pengurus klub badminton." },
+  { title: "Benchmarking HMCE x HIMTI", category: "activity", image: "Dokumentasi/BENCHMARKING (Stuban) HMCE X HIMTI 2026 as Sie Humas.jpeg", description: "Kegiatan studi banding dan kolaborasi antar himpunan mahasiswa." },
+  { title: "CE CUP 2025", category: "activity", image: "Dokumentasi/CE CUP2025 as Sie Acara.jpeg", description: "Kepanitiaan dan pelaksanaan event olahraga CE CUP." },
+  { title: "Pemateri CEO 2026", category: "activity", image: "Dokumentasi/CEO 2026 - OPP as pemateri yg membawakan materi pemandu.jpeg", description: "Sesi berbagi materi kepemimpinan kepada mahasiswa baru." },
+  { title: "Steering Committee CEO 2026", category: "activity", image: "Dokumentasi/CEO 2026 - OPP as Steering Committe.jpeg", description: "Pengawasan dan pengarahan strategis jalannya acara CEO." },
+  { title: "Dies Natalis PENS", category: "activity", image: "Dokumentasi/Diesnatalis 38 PENS as wasit utama & hakim garis.jpeg", description: "Bertugas sebagai wasit utama dan hakim garis dalam perayaan Dies Natalis PENS." },
+  { title: "Expo Campus MAI", category: "activity", image: "Dokumentasi/Expo Campus MAI 2025 as Pemateri.jpeg", description: "Sosialisasi kampus dan pengenalan dunia teknik komputer kepada santri MAI." },
+  { title: "Final Project Competition", category: "activity", image: "Dokumentasi/Final Project Competition 2026 all panitia as Koordinator Sie Humas.jpeg", description: "Dokumentasi kebersamaan panitia FPC 2026." },
+  { title: "Kabinet HMCE Sahitya Arkananta", category: "activity", image: "Dokumentasi/Foto Kabinet HMCE Sahitya Arkananta 2026.jpeg", description: "Potret kebersamaan pengurus kabinet HMCE." },
+  { title: "Gathering GATECOMP", category: "activity", image: "Dokumentasi/Gathering Computer Engginering (GATECOMP) 2025 as Sie Acara.jpeg", description: "Keseruan acara keakraban mahasiswa baru Teknik Komputer." },
+  { title: "Grand Opening Mentoring", category: "activity", image: "Dokumentasi/Grand Opening Mentoring 2026 as Koordinator Sie Humas.jpeg", description: "Pembukaan program mentoring keislaman kampus." },
+  { title: "Kelas Olimpiade TIK", category: "activity", image: "Dokumentasi/Kelas Olimpiade.jpeg", description: "Momen belajar bersama di kelas olimpiade informatika MAI." },
+  { title: "Komisi Data & Materi LKMM", category: "activity", image: "Dokumentasi/Komisi Data dan Materi (Saat membawakan materi) saat PP LKMM 2026.jpeg", description: "Sesi penyampaian materi dan pengelolaan data pelatihan kepemimpinan." },
+  { title: "Konsultasi LKMM TD 2026", category: "activity", image: "Dokumentasi/Konsul LKMM Tingkat Dasar 2026 as Pemandu 1.jpeg", description: "Pendampingan dan konsultasi intensif bersama peserta LKMM TD." },
+  { title: "LKMM Tingkat Dasar Gelombang 3", category: "activity", image: "Dokumentasi/LKMM Tingkat Dasar 2026 gelombang 3 as Koordinator Pemandu.jpeg", description: "Koordinasi lapangan dan pendampingan peserta gelombang 3." },
+  { title: "LKMM Tingkat Menengah UNESA", category: "activity", image: "Dokumentasi/LKMM Tingkat Menengah 2025 as Peserta.jpeg", description: "Mengikuti rangkaian pelatihan manajemen mahasiswa tingkat menengah." },
+  { title: "LKMM Tingkat Pra-Dasar", category: "activity", image: "Dokumentasi/LKMM Tingkat Pra Dasar 2026 as Pemateri.jpeg", description: "Berperan sebagai pemateri dalam pelatihan kepemimpinan dasar." },
+  { title: "Mentoring Rutin 2026", category: "activity", image: "Dokumentasi/Mentoring 2026.jpeg", description: "Sesi bimbingan mentoring keislaman mahasiswa." },
+  { title: "Minat Bakat Expo 2026", category: "activity", image: "Dokumentasi/Minat Bakat Expo 2026.jpeg", description: "Pameran eksplorasi potensi dan minat bakat mahasiswa PENS." },
+  { title: "Pemandu After Pembekalan Materi", category: "activity", image: "Dokumentasi/Pemandu after memberikan materi.jpeg", description: "Kebersamaan tim pemandu setelah menyampaikan materi LKMM." },
+  { title: "Pemandu LKMM Forkom Altaira", category: "activity", image: "Dokumentasi/Pemandu LKMM Forkom Altaira - Angkatan 2024.jpeg", description: "Pertemuan forum komunikasi pemandu LKMM angkatan 2024." },
+  { title: "PENS Badminton Club Master", category: "activity", image: "Dokumentasi/PENS Badminton Club (PBC) Master 2024 as sekretaris.jpeg", description: "Pengelolaan administrasi dan arsip klub bulu tangkis PENS." },
+  { title: "PP LKMM PENS 2026", category: "activity", image: "Dokumentasi/PP LKMM PENS 2026 as Sie PDD.jpeg", description: "Tim publikasi, dekorasi, dan dokumentasi pelatihan kepemimpinan." },
+  { title: "Sambut Wisuda Angkatan 2021", category: "activity", image: "Dokumentasi/Sambut Wisuda Angkatan 2021 as Sie Koordinator Lapangan.jpeg", description: "Koordinasi teknis lapangan dalam perayaan wisuda wisudawan." },
+  { title: "Staff Muda PSDM HMCE", category: "activity", image: "Dokumentasi/Staff Muda Pengembangan Sumber Daya Manusia (PSDM) HMCE.jpeg", description: "Dokumentasi kebersamaan departemen PSDM HMCE." },
+  { title: "Tim Olimpiade TIK MAI", category: "activity", image: "Dokumentasi/Tim Olimpiade TIK.jpeg", description: "Kenangan perjuangan bersama tim olimpiade informatika." },
+  { title: "Welcome Party UKM Badminton", category: "activity", image: "Dokumentasi/Welcome Party UKM Badminton as sekretaris.jpeg", description: "Penyambutan anggota baru klub bulu tangkis PENS." }
 ];
 
-/* 8. FUNGSI RENDER TIMELINE */
 function renderTimeline(data, elementId) {
   document.getElementById(elementId).innerHTML = data.map(item => `
     <article class="timeline-item reveal">
@@ -1429,7 +1594,6 @@ function renderTimeline(data, elementId) {
   `).join("");
 }
 
-/* 9. FUNGSI SWITCH TAB ORGANISASI */
 function switchOrgTab(type, event) {
   const btns = document.querySelectorAll('.org-tab-btn');
   btns.forEach(b => b.classList.remove('active'));
@@ -1444,7 +1608,6 @@ function switchOrgTab(type, event) {
   observeElements();
 }
 
-/* 10. FUNGSI RENDER KEAHLIAN (SKILLS) */
 function renderSkills() {
   document.getElementById("skillGrid").innerHTML = skills.map(item=>`
     <article class="skill-card reveal">
@@ -1454,7 +1617,6 @@ function renderSkills() {
   `).join("");
 }
 
-/* 11. FUNGSI RENDER PRESTASI */
 function renderAchievements() {
   document.getElementById("achievementGrid").innerHTML = achievements.map(item=>`
     <article class="card reveal">
@@ -1465,7 +1627,6 @@ function renderAchievements() {
   `).join("");
 }
 
-/* 12. FUNGSI RENDER PROJECTS & NAVIGASI MULTI-FOTO */
 const projectImgIndices = projects.map(() => 0);
 
 function renderProjects() {
@@ -1523,7 +1684,6 @@ function changeProjectImg(pIdx, direction, event) {
   }
 }
 
-/* 13. INISIALISASI 3D CAROUSEL SLIDER */
 function setupCarousel(trackId, dotsId, prevBtnId, nextBtnId, itemsList) {
   const track = document.getElementById(trackId);
   const dotsContainer = document.getElementById(dotsId);
@@ -1634,15 +1794,15 @@ function setupCarousel(trackId, dotsId, prevBtnId, nextBtnId, itemsList) {
   };
 }
 
+/* Default load menampilkan kategori "creative" (Karya Kreatif) */
 let showcaseSlider = setupCarousel(
   "carouselTrack", 
   "carouselDots", 
   "prevBtn", 
   "nextBtn", 
-  showcaseItems.filter(item => item.category === "training")
+  showcaseItems.filter(item => item.category === "creative")
 );
 
-/* Event Listener Filter Kategori Showcase */
 document.getElementById("filterTabs").addEventListener("click", (e) => {
   if (e.target.classList.contains("filter-btn")) {
     document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
@@ -1654,7 +1814,6 @@ document.getElementById("filterTabs").addEventListener("click", (e) => {
   }
 });
 
-/* 14. LIGHTBOX MODAL LOGIC */
 const modal = document.getElementById("imageModal");
 function openModal(imgSrc, title, desc) {
   document.getElementById("modalImg").src = imgSrc;
@@ -1667,7 +1826,6 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) modal.classList.remove("open");
 });
 
-/* 15. THEME TOGGLE (Light & Dark Mode) */
 const themeBtn = document.getElementById("themeBtn");
 const themeIcon = document.getElementById("themeIcon");
 const themeText = document.getElementById("themeText");
@@ -1693,7 +1851,6 @@ function updateThemeUI(theme) {
   }
 }
 
-/* 16. MOBILE MENU TOGGLE */
 document.getElementById("menuBtn").addEventListener("click", () => {
   document.getElementById("navLinks").classList.toggle("open");
 });
@@ -1703,7 +1860,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
-/* 17. SCROLL ANIMATIONS (Intersection Observer) */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1717,7 +1873,6 @@ function observeElements() {
   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 }
 
-/* 18. INITIALIZE ALL COMPONENTS ON LOAD */
 renderProjects();
 renderTimeline(education, "educationTimeline");
 renderTimeline(internships, "internshipTimeline");
